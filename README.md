@@ -5,7 +5,7 @@ This is an extension for github issue bloggers.
 ## Features
 
 - use github apis to store your blogs
-- easy use
+- easy to use
 
 ![new repository](images/step2.gif)
 
@@ -49,7 +49,7 @@ Open VS Code settings through the `CMD+SHIFT+P` and input `Open blogger`.
 
 ## Known Issues
 
-* black theme mode , next version will support black theme mode
+* dark mode , next version will support dark mode
 
 ## Release Notes
 
