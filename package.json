@@ -1,0 +1,92 @@
+{
+	"name": "blogger",
+	"displayName": "Blogger",
+	"description": "a blog extension based on github restful apis",
+	"version": "0.0.14",
+	"engines": {
+		"vscode": "^1.53.0"
+	},
+	"categories": [
+		"Notebooks"
+	],
+	"galleryBanner": {
+		"color": "#000000",
+		"theme": "dark"
+	},
+	"icon": "images/logo.png",
+	"keywords": [
+		"github",
+		"issue",
+		"blog"
+	],
+	"activationEvents": [
+		"onCommand:blogger.open",
+		"onCommand:blogger.config"
+	],
+	"main": "./dist/extension.js",
+	"publisher": "yhpnoraa",
+	"contributes": {
+		"configuration": {
+			"title": "GitHub Issue Blog",
+			"properties": {
+				"blogger.github.token": {
+					"type": "string",
+					"default": ""
+				},
+				"blogger.github.user": {
+					"type": "string",
+					"default": ""
+				},
+				"blogger.github.repo": {
+					"type": "string",
+					"default": ""
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "blogger.open",
+				"title": "Open blogger"
+			},
+			{
+				"command": "blogger.config",
+				"title": "Config blogger"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run package",
+		"compile": "webpack",
+		"watch": "webpack --watch",
+		"package": "webpack --mode production --devtool hidden-source-map",
+		"test-compile": "tsc -p ./",
+		"test-watch": "tsc -watch -p ./",
+		"pretest": "npm run test-compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.3",
+		"@types/lodash": "^4.14.168",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.20.6",
+		"@types/vscode": "^1.53.0",
+		"@typescript-eslint/eslint-plugin": "^4.14.1",
+		"@typescript-eslint/parser": "^4.14.1",
+		"eslint": "^7.19.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.2.1",
+		"ts-loader": "^8.0.14",
+		"typescript": "^4.1.3",
+		"vscode-test": "^1.5.0",
+		"webpack": "^5.19.0",
+		"webpack-cli": "^4.4.0"
+	},
+	"dependencies": {
+		"@octokit/core": "^3.3.0",
+		"@sap-devx/webview-rpc": "^0.3.1",
+		"cs-channel": "^1.0.4",
+		"lodash": "^4.17.21",
+		"vscode-webview-rpc": "^0.0.3"
+	}
+}

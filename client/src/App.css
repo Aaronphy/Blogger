@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.app{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; 
+}
+
+.app-title{
+  padding: 8px;
+}
+
+.app-labels{
+  padding: 8px;
+  user-select:none;
+}
+
+.app>div:nth-child(3){
+  flex:1;
+  position: relative;
+  margin: 0px 8px 8px 8px;
+}
+
+.app-actionBox{
+  position: fixed;
+  z-index:99999;
+  right: 8px;
+  bottom: 102px;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-actionBox > .ant-btn{
+  margin-bottom: 8px;
+}
+
+.bytemd {
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width: 100%;
+  height: 100%;
+}
+
+.bytemd-toolbar-right div:nth-child(1){
+  display: none;
+}
+
+
+.bytemd-toolbar-right div:nth-child(1){
+  display: none;
+}
+
+.bytemd-toolbar-right div:nth-child(3){
+  display: none;
+}
+
+.bytemd-toolbar-right div:nth-child(4){
+  display: none;
+}
+
+.bytemd-toolbar-right div:nth-child(6){
+  display: none;
+}
+
+
+
+.bytemd img{
+  width:100%;
+}
+
+.app-bloglist{
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-filter{
+  margin-bottom: 8px;
+}
+
+.app-bloglist-item{
+    color: rgba(0,0,0,0.65);
+    padding: 4px;
+    font-size: 14px;
+    line-height: 20px;
+    font-size: 16px;
+    border-radius: 7px;
+    margin-bottom: 8px;
+    width: 90%;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.7, 0.3, 0.1, 1);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.app-bloglist-item:hover{
+  background-color: #94C2ED;
+  color:#ffffff;
+}
+
+.edit-tag,.site-tag-plus,.tag-input{
+  margin: 4px;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+
+.app-bloglist{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.app-bloglist .list{
+  flex:1;
+  overflow: auto;
+}
+
+
+.ant-drawer-body{
+  padding: 8px;
+}
+
+.blog-pagination{
+  text-align: center;
+  margin-bottom: 24px;
+}

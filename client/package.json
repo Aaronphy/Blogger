@@ -1,0 +1,58 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/icons": "^4.5.0",
+    "@bytemd/plugin-breaks": "^1.9.0",
+    "@bytemd/plugin-frontmatter": "^1.9.0",
+    "@bytemd/plugin-gfm": "^1.7.0",
+    "@bytemd/plugin-highlight": "^1.7.0",
+    "@bytemd/react": "^1.7.0",
+    "@octokit/core": "^3.2.5",
+    "@sap-devx/webview-rpc": "^0.3.1",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.1",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^12.20.4",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "antd": "4.12.3",
+    "github-markdown-css": "^4.0.0",
+    "mobx": "^6.1.8",
+    "mobx-react-lite": "^3.2.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "typescript": "^4.2.3",
+    "vscode-webview-rpc": "^0.0.3"
+  },
+  "scripts": {
+    "start": "build-scripts --config build.config.js start",
+    "build": "build-scripts --config build.config.js build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@alib/build-scripts": "^0.1.30",
+    "@craco/craco": "^6.1.1",
+    "@types/lodash": "^4.14.168",
+    "build-plugin-react-app": "^1.7.13"
+  }
+}
