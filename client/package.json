@@ -10,7 +10,6 @@
     "@bytemd/plugin-highlight": "^1.7.0",
     "@bytemd/react": "^1.7.0",
     "@octokit/core": "^3.2.5",
-    "@sap-devx/webview-rpc": "^0.3.1",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.1",

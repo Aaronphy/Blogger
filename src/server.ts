@@ -4,8 +4,7 @@ import * as vscode from 'vscode';
 import { Octokit } from '@octokit/core';
 import { RequestParameters } from '@octokit/types';
 import { getSetting,ISetting,to, cdnURL} from './util';
-// import { ExtensionRPC } from 'vscode-webview-rpc';
-import ExtensionRPC from './rpc/ext';
+import { ExtensionRPC } from 'vscode-webview-rpc';
 import ApiMap from './apiMap';
 
 
@@ -106,7 +105,6 @@ export default class Service {
     }
 
     async createLabel (params?:RequestParameters){
-        console.log(params);
         const [err,res] = await to(this.octokit.request(ApiMap['createLabel'],{
           owner:this.config.user,
           repo:this.config.repo,
@@ -145,7 +143,6 @@ export default class Service {
 
 
     async getIssues(params?:RequestParameters){
-      console.log(params);
       const [err,res] = await to(this.octokit.request(ApiMap['getIssues'],{
         owner:this.config.user,
         repo:this.config.repo,
@@ -212,6 +209,7 @@ export default class Service {
 
    async queryTotalCount(){
     const [err,res] = await to(this.octokit.graphql(documents.getIssueCount({ username:this.config.user, repository:this.config.repo})));
+    console.log('total',res);
     if(!err){
       const {repository:{issues:{totalCount}} } = res as any;
       return totalCount;

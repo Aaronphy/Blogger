@@ -7,8 +7,7 @@ import Editor from './components/Editor';
 import ActionBox from './components/ActionBox';
 import LabelManager from './components/LabelManager';
 import List from './components/List';
-// import { WebviewRPC } from 'vscode-webview-rpc';
-import  WebviewRPC  from '../../src/rpc/browser';
+import { WebviewRPC } from 'vscode-webview-rpc';
 
 import { getMilestones } from './service';
 import { IStore, IIssue } from './types'
@@ -90,6 +89,7 @@ const App = observer(() => {
         }else {
           count = await RPC.emit('getTotalCount');
         }
+        console.log(count);
         store.totalCount = count;
     },
     getIssues:async ()=>{
@@ -148,9 +148,21 @@ const App = observer(() => {
   },[]);
 
 
+  const checkFile = (file:File)=>{
+    const isLt2M = file.size/1024/1024<2;
+    if(!isLt2M){
+      message.error('Image`s maxsize is 2MB');
+    }
+    return isLt2M;
+  }
+
+
   const uploadImages = (e:File[])=>{
-    const hide = message.loading('Uploading Picture...', 0);
+
+    if(e.length===0)return;
     const img = e[0];
+    if(!checkFile(img))return;
+    const hide = message.loading('Uploading Picture...', 0);
     const ext = img.name.split('.').pop();
     const path = `images/${new Date().getTime()}.${ext}`
     const fileReader =  new FileReader()

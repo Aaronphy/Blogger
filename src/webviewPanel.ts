@@ -79,7 +79,6 @@ export default class EditPanel {
 		}, async (progress) => {
 			progress.report({  increment: 0 });
 			try{
-				await sleep(0);
 				await this._update();
 				this._panel.onDidDispose(() => this.dispose(), null, this._disposables);
 			}catch(e){
